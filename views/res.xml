@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+
+
+
+
+
+ <record id="estate_tree_s" model="ir.ui.view">
+        <field name="name">estate.tree</field>
+        <field name="model">estate</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="postcode"/>
+            </tree>
+        </field>
+    </record>
+
+
+<record id="res_users_view_tree" model="ir.ui.view">
+        <field name="name">res.users.tree.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="before">
+                <field name='property_ids' />
+            </xpath>
+            <!--
+            <field name="name" position="inside">
+                <field name="property_ids"/>
+            </field>
+            -->
+        
+        </field>
+    </record>
+
+
+</odoo>
